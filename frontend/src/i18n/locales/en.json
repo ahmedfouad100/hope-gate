@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "predict": "Check a result",
+    "intake": "Patient intake",
+    "hospitals": "Find a center",
+    "batch": "Batch upload",
+    "doctor": "Doctor portal",
+    "dashboard": "Analytics"
+  },
+  "brand": {
+    "name": "Hope Gate",
+    "tagline": "Breast cancer information platform"
+  },
+  "home": {
+    "kicker": "A research demo, built to be honest about its limits",
+    "title": "Understand what a breast cancer risk model can — and can't — tell you",
+    "body": "Hope Gate pairs a transparent demo classifier with a directory of oncology centers across Egypt's governorates. Every result here comes from cell-measurement data collected after imaging or biopsy — it is not an early-screening tool, and it is not a substitute for a doctor.",
+    "cta_predict": "Try the demo classifier",
+    "cta_hospitals": "Browse oncology centers"
+  },
+  "disclaimer": {
+    "model": "This is a research demo trained on a public dataset of post-biopsy cell measurements. It is not a clinical device, has not been validated on Egyptian patients, and cannot assess risk before a diagnostic workup has happened. Always rely on a qualified doctor."
+  },
+  "predict": {
+    "title": "Demo classifier",
+    "intro": "Enter the eight cell-measurement values from a pathology report to see how the demo model scores them. This does not replace a doctor's reading.",
+    "submit": "Run prediction",
+    "result_malignant": "Model leans malignant",
+    "result_benign": "Model leans benign",
+    "probability": "Estimated malignant probability"
+  },
+  "intake": {
+    "title": "Patient intake",
+    "intro": "Share a few details and we'll point you to a listed oncology center in your governorate. Nothing here is diagnostic.",
+    "phone": "Phone number",
+    "age": "Age",
+    "governorate": "Governorate",
+    "district": "District (optional)",
+    "symptoms": "Symptoms you've noticed",
+    "chronic": "Chronic conditions",
+    "family_history": "First-degree family history of breast cancer",
+    "prior_biopsy": "Previous breast biopsy",
+    "consent": "I consent to this information being stored so a center can be recommended to me.",
+    "submit": "Submit",
+    "success": "Saved. Suggested center for your governorate:"
+  },
+  "hospitals": {
+    "title": "Oncology centers by governorate",
+    "intro": "Directory information only — not a referral or a quality ranking. Confirm address, services, and hours before visiting.",
+    "filter_label": "Filter by governorate",
+    "all": "All governorates"
+  },
+  "batch": {
+    "title": "Batch prediction",
+    "intro": "Upload a CSV with the eight core measurement columns to score multiple rows at once.",
+    "download_sample": "Download sample CSV",
+    "upload": "Upload and run",
+    "row": "Row",
+    "result": "Result",
+    "probability": "Malignant %"
+  },
+  "doctor": {
+    "login_title": "Doctor sign in",
+    "register_title": "Register",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "login": "Sign in",
+    "register": "Create account",
+    "logged_in_as": "Signed in as",
+    "logout": "Sign out",
+    "records_title": "Your saved records",
+    "inquiries_title": "Patient inquiries"
+  },
+  "dashboard": {
+    "title": "Model & platform analytics",
+    "model_source": "Model source",
+    "accuracy": "Accuracy",
+    "precision": "Precision",
+    "recall": "Recall",
+    "roc_auc": "ROC AUC",
+    "counts_title": "Platform activity"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again.",
+    "required": "Required"
+  }
+}

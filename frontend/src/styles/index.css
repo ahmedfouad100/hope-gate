@@ -1,0 +1,373 @@
+:root {
+  /* Color — grounded in the subject: rose is the breast-cancer-awareness
+     color (deliberate, not decorative), teal reads as clinical trust,
+     sage/amber carry benign/attention meaning through the UI. */
+  --ink: #241c1f;
+  --ink-soft: #5a4f52;
+  --paper: #f7f3ed;
+  --paper-raised: #ffffff;
+  --line: #e4dad2;
+
+  --rose: #b0245a;
+  --rose-deep: #7c1940;
+  --teal: #0f5257;
+  --teal-soft: #e4eeed;
+  --sage: #3f6b56;
+  --amber: #a3492c;
+
+  --font-display: "Fraunces", "Cairo", serif;
+  --font-body: "Inter", "Cairo", sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+body[dir="rtl"] {
+  font-family: "Cairo", var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--rose-deep);
+}
+
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] h3 {
+  font-family: "Cairo", var(--font-display);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+p {
+  max-width: 62ch;
+}
+
+a {
+  color: var(--teal);
+}
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: var(--space-4) 0;
+}
+
+/* --- Nav --- */
+.top-nav {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-raised);
+}
+
+.top-nav-inner {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--rose-deep);
+  text-decoration: none;
+}
+
+.brand span.tagline {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  border-bottom-color: var(--rose);
+  color: var(--rose-deep);
+}
+
+.lang-toggle {
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+/* --- Cards & sections --- */
+.panel {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.disclaimer {
+  border-inline-start: 3px solid var(--amber);
+  background: #fbf1ea;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+
+.hospital-row {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+  border-inline-start: 3px solid var(--teal);
+  padding-inline-start: var(--space-2);
+}
+
+.hospital-row:last-child {
+  border-bottom: none;
+}
+
+.hospital-row h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.hospital-meta {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-2);
+}
+
+.metric-cell {
+  border-top: 3px solid var(--rose);
+  padding-top: 0.6rem;
+}
+
+.metric-cell .value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--rose-deep);
+  display: block;
+}
+
+.metric-cell .label {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* --- Forms --- */
+.field {
+  margin-bottom: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2);
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button.primary {
+  font: inherit;
+  background: var(--rose-deep);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.primary:hover {
+  background: var(--rose);
+}
+
+button.primary:disabled {
+  background: #c9b6bd;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  font: inherit;
+  background: transparent;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+}
+
+.result-banner {
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-2);
+  font-size: 1rem;
+}
+
+.result-banner.benign {
+  background: #eaf2ee;
+  border-inline-start: 4px solid var(--sage);
+}
+
+.result-banner.malignant {
+  background: #fbe9e6;
+  border-inline-start: 4px solid var(--amber);
+}
+
+.error-text {
+  color: var(--amber);
+  font-size: 0.9rem;
+}
+
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table.data-table th,
+table.data-table td {
+  text-align: start;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+table.data-table th {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.hero {
+  padding-bottom: var(--space-3);
+}
+
+.hero .kicker {
+  color: var(--teal);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.tab-strip {
+  display: flex;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--space-3);
+}
+
+.tab-strip button {
+  font: inherit;
+  background: none;
+  border: none;
+  padding: 0.6rem 0;
+  cursor: pointer;
+  color: var(--ink-soft);
+  border-bottom: 2px solid transparent;
+}
+
+.tab-strip button.active {
+  color: var(--rose-deep);
+  border-bottom-color: var(--rose-deep);
+}
+
+footer.app-footer {
+  border-top: 1px solid var(--line);
+  padding: var(--space-2) 0;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
